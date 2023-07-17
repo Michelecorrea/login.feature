@@ -10,9 +10,9 @@ Contexto:
 Dado que eu acesse a plataforma da Ebac-Shop
 
 Cenario:seleções de cor, tamanho e quantidade válidos
-Quando eu selecionar a "cor, tamanho XS, M , L , XL ,quantidade"
+Quando eu selecionar a "<cor>, <tamanho XS>, <M>, <L>, <XL>, e <quantidade>"
 E permitir até 10 produtos
-Então deve emitir a mensagem "Produto adicionado ao carrinho"
+Então deve emitir a mensagem "<Produto adicionado ao carrinho>"
 
 Exemplos:
 | cor   | tamanho | quantidade |
