@@ -10,9 +10,9 @@ Dado que eu acesse a pagina EBAC-SHOP ,quero concluir meu cadastro para realizar
 
 Cenario: 
 Quando eu realizar o cadastro com todos os dados obrigatórios,marcado com asteriscos
-"nome, sobrenome , pais , endereço , cidade , cep , telefone ,enderenço_de _email " 
+"<nome>, <sobrenome>, <pais>, <endereço>, <cidade>, <cep>, <telefone>, e <enderenço_de _email>  
 E clicar no botão " FINALIZAR COMPRA"
-Então dever exbir a "mensagem"
+Então dever exbir a "<mensagem>"
 
 
 Esquema do Cenario:
