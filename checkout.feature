@@ -1,29 +1,51 @@
 #linguagem: pt
 
-Funcionalidade: tela de cadastro checkout
-Como cliente da EBAC-SHOP 
-Quero fazer concluir meu cadastro    
-Para finalizar minha compra 
+[US-0003] – Tela de cadastro - Checkout
 
-Contexto: 
-Dado que eu acesse a pagina EBAC-SHOP ,quero concluir meu cadastro para realizar a compra
+Descrição:
+Como cliente da EBAC-SHOP
+Quero fazer concluir meu cadastro
+Para finalizar minha compra
 
-Cenario: 
-Quando eu realizar o cadastro com todos os dados obrigatórios,marcado com asteriscos
-"<nome>, <sobrenome>, <pais>, <endereço>, <cidade>, <cep>, <telefone>, e <enderenço_de _email>  
-E clicar no botão " FINALIZAR COMPRA"
-Então dever exbir a "<mensagem>"
+Critérios de Aceitação:
+1 – Deve ser cadastrado com todos os dados obrigatórios, marcado com asteriscos
+2 – Não deve permitir campo e-mail com formato inválido. Sistema deve inserir uma mensagem de erro
+3 – Ao tentar cadastrar com campos vazios, deve exibir mensagem de alerta.
+
+Cenário: Cadastrar todos os campos com asteriscos
+Dado que eu estou na tela de Checkout do portal da EBAC
+Quando eu cadastro todos dados obrigatorios com asteriscos
+E clico no botão finalizar compra
+Entao o sistema deve retornar uma mensagem "Compra Fizalizada com sucesso"
+
+Cenário: Dados inválidos no campo e-mail
+Dado que eu estou na tela de Checkout do portal da EBAC
+Quando eu preenho campo e-mail com dados inválidos
+E clico no botão finalizar compra
+Entao o sistema deve retornar uma mensagem "e-mail invalido"
+
+Cenário: alerta de mensagem compos vazios
+Dado que eu estou na tela de Checkout do portal da EBAC
+Quando não cadastro os campos obrigatorios com asteriscos.
+E clico no botão finalizar compra
+Entao o sistema deve retornar uma mensagem "Preencher os campos com asteriscos"
 
 
-Esquema do Cenario:
-Quando  tentar <cadastrar com campos vazios>
-Então deve exibir a uma <mensagem> de campo vazio.
+Cenários usando contexto
+Contexto:
+Dado que eu estou na tela de Checkout do portal da EBAC
 
-Exemplos:
+Cenário: Cadastrar todos os campos com asteriscos
+Quando eu cadastro todos dados obrigatorios com asteriscos
+E clico no botão finalizar compra
+Entao o sistema deve retornar uma mensagem "Compra Fizalizada com sucesso"
 
-|nome     | sobrenome | pais    | endereço                                         | cidade            |  cep     |  telefone      | enderenço_de _email|
+Cenário: Dados inválidos no campo e-mail
+Quando eu preenho campo e-mail com dados inválidos
+E clico no botão finalizar compra
+Entao o sistema deve retornar uma mensagem "e-mail invalido"
 
-|Michele    |  Silva  | Brasil  | Rua Itapema n 80, Bairro Jaguari                 | São Paulo        | 06709899 |  11978788878   | michele@ebac.com.br |
-|João       | Silva   | Brasil  | Rua Uruguai n 908,Bairro São Luiz                | Santa Barbara    | 08798889 |  13889989998   | joao@ebac.com.br    |
-|Francisco  | Lemos   | Brasil  | Avenida Pirituba n 789, Bairro Jardim das flores | Rio de Janeiro   | 08768555 |  145645543     | joao@ebac.com.br    |
-
+Cenário: alerta de mensagem compos vazios
+Quando não cadastro os campos obrigatorios com asteriscos.
+E clico no botão finalizar compra
+Entao o sistema deve retornar uma mensagem "Preencher os campos com asteriscos"
